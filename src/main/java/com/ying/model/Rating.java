@@ -1,5 +1,11 @@
 package com.ying.model;
 
+/**
+ * The class Rating stores the data about one rating of an item.
+ * 
+ * @author Ying Deng 
+ * @version 2022-01-15
+ */
 public class Rating implements Comparable<Rating> {
 	private String item;
 	private double value;

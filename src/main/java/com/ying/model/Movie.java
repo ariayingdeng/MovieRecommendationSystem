@@ -1,5 +1,11 @@
 package com.ying.model;
 
+/**
+ * The class Movies stores the data about one movie.
+ * 
+ * @author Ying Deng 
+ * @version 2022-01-15
+ */
 public class Movie {
     private String id;
     private String title;

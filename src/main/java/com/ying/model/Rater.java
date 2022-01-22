@@ -2,6 +2,12 @@ package com.ying.model;
 
 import java.util.ArrayList;
 
+/**
+ * The class Rater keeps track of one rater and all their ratings.
+ * 
+ * @author Ying Deng 
+ * @version 2022-01-15
+ */
 public class Rater {
     private String myID;
     private ArrayList<Rating> myRatings;

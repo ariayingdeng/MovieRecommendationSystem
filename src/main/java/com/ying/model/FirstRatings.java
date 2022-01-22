@@ -7,7 +7,12 @@ import java.util.Scanner;
 
 import org.apache.commons.csv.*;
 
-
+/**
+ * Process the movie and ratings data from XML files.
+ * 
+ * @author Ying Deng 
+ * @version 2022-01-15
+ */
 public class FirstRatings {
 	
 	public enum MovieHeaders {
@@ -21,16 +26,8 @@ public class FirstRatings {
 
 	public static void main(String[] args) {
 //		testLoadMovies();
-//		testLoadRaters();
-		System.out.print("Enter a number: ");
-		Scanner keyboard = new Scanner(System.in);
-		int num1 = keyboard.nextInt();
-		System.out.println("Num 1: " + num1);
-		
-//		keyboard.nextLine();
-		System.out.print("Enter a sentence: ");
-		String str = keyboard.nextLine();
-		System.out.println("Input 2: " + str);
+		testLoadRaters();
+
 
 	}
 	
