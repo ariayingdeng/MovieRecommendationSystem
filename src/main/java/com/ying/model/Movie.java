@@ -19,7 +19,7 @@ public class Movie {
 
 
 	public Movie(String id, String title, String year, String genres, String director, String country, String poster,
-			int minutes) {
+			String minutes) {
 		this.id = id.trim();
 		this.title = title.trim();
 		this.year = Integer.parseInt(year.trim());
@@ -27,7 +27,7 @@ public class Movie {
 		this.director = director;
 		this.country = country;
 		this.poster = poster;
-		this.minutes = minutes;
+		this.minutes = Integer.parseInt(minutes.trim());
 	}
 
 

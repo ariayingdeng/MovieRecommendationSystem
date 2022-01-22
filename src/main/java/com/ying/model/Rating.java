@@ -4,9 +4,9 @@ public class Rating implements Comparable<Rating> {
 	private String item;
 	private double value;
 
-	public Rating(String item, double value) {
+	public Rating(String item, String value) {
 		this.item = item;
-		this.value = value;
+		this.value = Double.parseDouble(value.trim());
 	}
 
 	public String getItem() {
@@ -21,8 +21,8 @@ public class Rating implements Comparable<Rating> {
 		return value;
 	}
 
-	public void setValue(double value) {
-		this.value = value;
+	public void setValue(String value) {
+		this.value = Double.parseDouble(value.trim());
 	}
 
 	@Override

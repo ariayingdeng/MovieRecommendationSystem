@@ -8,6 +8,7 @@ public class Rater {
     
 	public Rater(String myID) {
 		this.myID = myID;
+		myRatings = new ArrayList<>();
 	}
 	
     
@@ -18,8 +19,19 @@ public class Rater {
 	public void setMyID(String myID) {
 		this.myID = myID;
 	}
+	
 
-	public void addRating(String item, double rating) {
+	public ArrayList<Rating> getMyRatings() {
+		return myRatings;
+	}
+
+
+	public void setMyRatings(ArrayList<Rating> myRatings) {
+		this.myRatings = myRatings;
+	}
+
+
+	public void addRating(String item, String rating) {
         myRatings.add(new Rating(item,rating));
     }
     
