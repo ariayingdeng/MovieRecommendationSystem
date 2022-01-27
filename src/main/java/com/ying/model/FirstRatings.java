@@ -23,6 +23,10 @@ public class FirstRatings {
 		rater_id, movie_id, rating, time
 	}
 	
+	public static void main(String[] args) {
+		testLoadRaters();
+	}
+	
 	/**
 	 * This method process every record from the CSV file whose name is filename, 
 	 * a file of movie information.
@@ -126,8 +130,8 @@ public class FirstRatings {
 	 * @param filename the raters CSV file name
 	 * @return an ArrayList of type Rater with all the rater data from the file
 	 */
-	public static ArrayList<Rater> loadRaters(String filename) {
-		ArrayList<Rater> raters = new ArrayList<>();
+	public static ArrayList<EfficientRater> loadRaters(String filename) {
+		ArrayList<EfficientRater> raters = new ArrayList<>();
 		try {
 			FileReader reader = new FileReader(filename);
 			CSVFormat csvFormat = CSVFormat.Builder.create()
@@ -144,14 +148,14 @@ public class FirstRatings {
 				//if hasRater add rating in the rater
 				//else add the new rater into the raters
 				boolean hasRater = false;
-				for (Rater rater: raters) {
+				for (EfficientRater rater: raters) {
 					if ((rater.getMyID()).equals(raterID)) {
 						hasRater = true;
 						rater.addRating(movieID, ratingValue);
 					}
 				}
 				if (!hasRater) {
-					Rater newRater = new Rater(raterID);
+					EfficientRater newRater = new EfficientRater(raterID);
 					newRater.addRating(movieID, ratingValue);
 					raters.add(newRater);
 				}
@@ -167,7 +171,7 @@ public class FirstRatings {
 	
 	public static void testLoadRaters() {
 		String fileName = "data\\ratings.csv";
-		ArrayList<Rater> raters = loadRaters(fileName);
+		ArrayList<EfficientRater> raters = loadRaters(fileName);
 		System.out.println("The number of raters " + raters.size());
 //		for (Rater rater: raters) {
 //			System.out.println(rater.getMyID() + "\t" + rater.numRatings());
@@ -178,7 +182,7 @@ public class FirstRatings {
 //		}
 		
 		//find the number of ratings for a particular rater
-		for (Rater rater: raters) {
+		for (EfficientRater rater: raters) {
 			if (rater.getMyID().equals("193")) {
 				System.out.println("The number of ratings: " + rater.numRatings());
 			}
@@ -187,13 +191,13 @@ public class FirstRatings {
 		//find the maximum number of ratings by any rater
 		int maxNum = 0;
 		ArrayList<String> ratersWithMaxRatings = new ArrayList<>();
-		for (Rater rater: raters) {
+		for (EfficientRater rater: raters) {
 			int num = rater.numRatings();
 			if (num > maxNum) {
 				maxNum = num;
 			}
 		}
-		for (Rater rater: raters) {
+		for (EfficientRater rater: raters) {
 			if (rater.numRatings() == maxNum)
 				ratersWithMaxRatings.add(rater.getMyID());
 		}
@@ -203,7 +207,7 @@ public class FirstRatings {
 		
 		//find the number of ratings a particular movie has
 		int ratingsNum = 0;
-		for (Rater rater: raters) {
+		for (EfficientRater rater: raters) {
 			if (rater.hasRating("1798709")) {
 				ratingsNum++;
 			}
@@ -212,13 +216,12 @@ public class FirstRatings {
 		
 		//determine how many different movies have been rated by all these raters
 		ArrayList<String> movies = new ArrayList<>();
-		for (Rater rater: raters) {
-			ArrayList<Rating> ratings = rater.getMyRatings();
-			for (Rating rating: ratings) {
-				String movieID = rating.getItem();
-				if (!movies.contains(movieID))
+		for (EfficientRater rater: raters) {
+			ArrayList<String> moviesRated = rater.getItemsRated();
+			for (String movie: moviesRated) {
+				if (!movies.contains(movie))
 				{
-					movies.add(movieID);
+					movies.add(movie);
 				}
 			}
 		}

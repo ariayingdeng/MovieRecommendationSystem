@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class SecondRatings {
     private ArrayList<Movie> myMovies;
-    private ArrayList<Rater> myRaters;
+    private ArrayList<EfficientRater> myRaters;
     
     public SecondRatings() {
         this("ratedmoviesfull.csv", "ratings.csv");
@@ -49,12 +49,10 @@ public class SecondRatings {
     public double getAverageByID(String id, int minimalRaters) {
     	int raters = 0;
     	double totalRating = 0;
-    	for (Rater rater: myRaters) {
-    		for (Rating rating: rater.getMyRatings()) {
-    			if (rating.getItem().equals(id)) {
-    				raters++;
-    				totalRating += rating.getValue();
-    			}
+    	for (EfficientRater rater: myRaters) {
+    		if (rater.hasRating(id)) {
+    			raters++;
+    			totalRating += rater.getRating(id);
     		}
     	}
     	if (raters >= minimalRaters) {
