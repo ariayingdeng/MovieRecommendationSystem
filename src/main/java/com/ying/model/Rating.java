@@ -14,6 +14,11 @@ public class Rating implements Comparable<Rating> {
 		this.item = item;
 		this.value = Double.parseDouble(value.trim());
 	}
+	
+	public Rating(String item, double value) {
+		this.item = item;
+		this.value = value;
+	}
 
 	public String getItem() {
 		return item;
