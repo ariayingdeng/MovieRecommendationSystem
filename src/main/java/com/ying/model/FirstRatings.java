@@ -23,14 +23,6 @@ public class FirstRatings {
 		rater_id, movie_id, rating, time
 	}
 	
-
-	public static void main(String[] args) {
-//		testLoadMovies();
-		testLoadRaters();
-
-
-	}
-	
 	/**
 	 * This method process every record from the CSV file whose name is filename, 
 	 * a file of movie information.
