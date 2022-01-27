@@ -2,75 +2,10 @@ package com.ying.model;
 
 import java.util.ArrayList;
 
-/**
- * The class Rater keeps track of one rater and all their ratings.
- * 
- * @author Ying Deng 
- * @version 2022-01-15
- */
-public class Rater {
-    private String myID;
-    private ArrayList<Rating> myRatings;
-    
-	public Rater(String myID) {
-		this.myID = myID;
-		myRatings = new ArrayList<>();
-	}
-	
-    
-    public String getMyID() {
-		return myID;
-	}
-
-	public void setMyID(String myID) {
-		this.myID = myID;
-	}
-	
-
-	public ArrayList<Rating> getMyRatings() {
-		return myRatings;
-	}
-
-
-	public void setMyRatings(ArrayList<Rating> myRatings) {
-		this.myRatings = myRatings;
-	}
-
-
-	public void addRating(String item, String rating) {
-        myRatings.add(new Rating(item,rating));
-    }
-    
-    public boolean hasRating(String item) {
-        for(int k=0; k < myRatings.size(); k++){
-            if (myRatings.get(k).getItem().equals(item)){
-                return true;
-            }
-        }
-        return false;
-    }
-    
-    public double getRating(String item) {
-        for(int k=0; k < myRatings.size(); k++){
-            if (myRatings.get(k).getItem().equals(item)){
-                return myRatings.get(k).getValue();
-            }
-        }
-        
-        return -1;
-    }
-    
-    public int numRatings() {
-        return myRatings.size();
-    }
-    
-    public ArrayList<String> getItemsRated() {
-        ArrayList<String> list = new ArrayList<String>();
-        for(int k=0; k < myRatings.size(); k++){
-            list.add(myRatings.get(k).getItem());
-        }
-        
-        return list;
-    }
-
+public interface Rater {
+	public void addRating(String item, String rating);
+	public boolean hasRating(String item);
+	public double getRating(String item);
+	public int numRatings();
+	public ArrayList<String> getItemsRated();
 }
