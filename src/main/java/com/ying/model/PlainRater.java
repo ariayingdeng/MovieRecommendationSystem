@@ -2,6 +2,8 @@ package com.ying.model;
 
 import java.util.ArrayList;
 
+import com.ying.interfaces.Rater;
+
 /**
  * The class Rater keeps track of one rater and all their ratings.
  * 

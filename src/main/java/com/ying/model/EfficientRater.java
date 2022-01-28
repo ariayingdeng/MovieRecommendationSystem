@@ -3,6 +3,8 @@ package com.ying.model;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.ying.interfaces.Rater;
+
 public class EfficientRater implements Rater {
     private String myID;
     HashMap<String, Rating> myRatings;
