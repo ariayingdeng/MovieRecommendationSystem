@@ -1,7 +1,7 @@
 package com.ying.filters;
 
+import com.ying.databases.MovieDatabase;
 import com.ying.interfaces.Filter;
-import com.ying.moviedatabase.MovieDatabase;
 
 public class YearsAfterFilter implements Filter {
 	private int myYear;

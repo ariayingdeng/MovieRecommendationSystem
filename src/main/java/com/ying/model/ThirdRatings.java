@@ -2,9 +2,9 @@ package com.ying.model;
 
 import java.util.ArrayList;
 
+import com.ying.databases.MovieDatabase;
 import com.ying.filters.TrueFilter;
 import com.ying.interfaces.Filter;
-import com.ying.moviedatabase.MovieDatabase;
 
 public class ThirdRatings {
 	    private ArrayList<EfficientRater> myRaters;

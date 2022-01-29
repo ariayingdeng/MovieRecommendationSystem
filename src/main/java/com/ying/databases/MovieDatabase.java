@@ -4,7 +4,7 @@
  * The class also allows filtering movies based on queries.
  *
  */
-package com.ying.moviedatabase;
+package com.ying.databases;
 
 import java.util.ArrayList;
 import java.util.HashMap;

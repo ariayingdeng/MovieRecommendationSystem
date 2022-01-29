@@ -1,7 +1,7 @@
 package com.ying.model;
 
+import com.ying.databases.MovieDatabase;
 import com.ying.interfaces.Filter;
-import com.ying.moviedatabase.MovieDatabase;
 
 public class MinutesFilter implements Filter {
 	private int min;
