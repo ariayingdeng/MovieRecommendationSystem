@@ -1,19 +1,43 @@
 package com.ying.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * The class Movies stores the data about one movie.
  * 
  * @author Ying Deng 
  * @version 2022-01-15
  */
+
+@Entity
+@Table(name="movies")
 public class Movie {
+	
+	@Id
     private String id;
+	
+	@Column(name="title", nullable=false)
     private String title;
+	
+	@Column(name="year")
     private int year;
+	
+	@Column(name="genres")
     private String genres;
+	
+	@Column(name="director")
     private String director;
+	
+	@Column(name="country")
     private String country;
+	
+	@Column(name="poster")
     private String poster;
+	
+	@Column(name="minutes")
     private int minutes;
     
     
